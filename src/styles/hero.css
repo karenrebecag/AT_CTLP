@@ -1,0 +1,141 @@
+/* atfx-copytrading · hero (banner). Maquetación Relume "Header 108": bloque de texto
+   centrado arriba + stage con un cluster de 7 imágenes que se separan mientras el central
+   crece a fullscreen. El pin y el riel de scroll los crea GSAP ScrollTrigger (NO sticky CSS,
+   que se rompe por el overflow-clip del root) — ver ui/hero108-scroll.ts. Sección dark;
+   tokens --aa-*. */
+
+.aa-landing .aa-hero108 {
+  position: relative;
+}
+
+/* ── Bloque de texto (flujo normal, arriba) ──────────────────────────────────── */
+.aa-landing .aa-hero108__intro {
+  padding-top: clamp(6rem, 12vh, 9rem); /* despeja topbar + navbar fijos */
+}
+
+.aa-landing .aa-hero108__head {
+  max-width: 68rem; /* ancho para que el título envuelva en menos líneas, más horizontal */
+  margin-inline: auto;
+  text-align: center;
+}
+
+.aa-landing .aa-hero108__title {
+  margin-bottom: 1.5rem;
+  text-wrap: balance; /* reparte las líneas de forma pareja en lugar de una columna angosta */
+}
+
+.aa-landing .aa-hero108__desc {
+  max-width: 48rem;
+  margin-inline: auto;
+  color: var(--aa-fg-muted);
+}
+
+.aa-landing .aa-hero108__cta {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.aa-landing .aa-hero108__disclaimer {
+  margin-top: 1.25rem;
+  max-width: 36rem;
+  margin-inline: auto;
+  font-size: var(--aa-text-xxs);
+  line-height: 1.5;
+  color: var(--aa-fg-subtle);
+}
+
+/* ── Stage sticky con el cluster ─────────────────────────────────────────────── */
+.aa-landing .aa-hero108__stage {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* GSAP lo pinea; el pin-spacer aporta el riel de scroll */
+  overflow: hidden; /* clip cuando los grupos se van fuera de pantalla */
+}
+
+.aa-landing .aa-hero108__grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 25% 50% 25%;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60vh;
+}
+
+/* Grupos laterales: un stack de 2 imágenes; en desktop se suma el retrato exterior. */
+.aa-landing .aa-hero108__group {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: 1rem;
+}
+.aa-landing .aa-hero108__group--left {
+  justify-self: end;
+  justify-items: end;
+}
+.aa-landing .aa-hero108__group--right {
+  justify-self: start;
+  justify-items: start;
+}
+
+.aa-landing .aa-hero108__side {
+  display: none; /* el retrato exterior solo en desktop */
+}
+
+.aa-landing .aa-hero108__stack {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  width: 40vw;
+  align-self: center;
+}
+
+.aa-landing .aa-hero108__img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--aa-radius-l);
+}
+.aa-landing .aa-hero108__img--2x3 { aspect-ratio: 2 / 3; }
+.aa-landing .aa-hero108__img--1x1 { aspect-ratio: 1 / 1; }
+.aa-landing .aa-hero108__img--3x4 { aspect-ratio: 3 / 4; }
+.aa-landing .aa-hero108__img--cover { height: 100%; border-radius: inherit; }
+
+/* Imagen central: tamaño inicial replicado del JS para el estado pre-hidratación
+   (el scrub lo sobreescribe y la lleva a 100vw × 100vh). */
+.aa-landing .aa-hero108__center {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  width: 50vw;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: var(--aa-radius-xl);
+}
+
+@media (min-width: 768px) {
+  .aa-landing .aa-hero108__grid {
+    grid-template-columns: 32% 36% 32%;
+    height: 80vh;
+  }
+  .aa-landing .aa-hero108__side {
+    display: block;
+    width: 25vw;
+  }
+  .aa-landing .aa-hero108__stack {
+    width: 18vw;
+  }
+  .aa-landing .aa-hero108__center {
+    width: 36vw;
+    height: 80vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aa-landing .aa-hero108__side {
+    width: 20vw;
+  }
+}

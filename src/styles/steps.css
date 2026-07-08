@@ -1,0 +1,60 @@
+/* atfx-copytrading · "Cómo funciona" (Relume Layout 626): header a la izquierda + fila de 4
+   pasos separados por divisores, con línea superior. Numeración 01–04 en fuente display.
+   Tokens --aa-* (border/accent se remapean por tema). */
+
+.aa-landing .aa-steps__header {
+  max-width: 40rem;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.aa-landing .aa-steps__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--aa-border);
+}
+
+/* Mobile: los pasos se apilan; el divisor es la línea superior de cada uno. */
+.aa-landing .aa-steps__item {
+  padding: 2rem 0 0.5rem;
+  border-top: 1px solid var(--aa-border);
+}
+.aa-landing .aa-steps__item:first-child {
+  border-top: 0; /* el grid ya aporta la línea superior */
+}
+
+.aa-landing .aa-steps__num {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-family: var(--aa-font-display);
+  font-size: var(--aa-text-l);
+  line-height: 1;
+  color: var(--aa-accent);
+}
+
+.aa-landing .aa-steps__title {
+  margin-bottom: 0.75rem;
+}
+
+.aa-landing .aa-steps__desc {
+  color: var(--aa-fg-muted);
+}
+
+.aa-landing .aa-steps__cta {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+/* Desktop: 4 columnas; el divisor pasa a ser vertical (border-left). */
+@media (min-width: 768px) {
+  .aa-landing .aa-steps__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .aa-landing .aa-steps__item {
+    padding: 2rem 1.5rem 0.5rem;
+    border-top: 0;
+    border-left: 1px solid var(--aa-border);
+  }
+  .aa-landing .aa-steps__item:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+}

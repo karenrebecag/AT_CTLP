@@ -1,0 +1,76 @@
+/* atfx-copytrading · "Elige con datos" (Relume Layout 682): section-header + card 2-col con
+   imagen a un lado y lista de 4 criterios (icono + título + texto) al otro. Tokens --aa-*. */
+
+.aa-landing .aa-choose__header {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.aa-landing .aa-choose__card {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--aa-border);
+  border-radius: var(--aa-radius-xl);
+  overflow: hidden;
+  background-color: color-mix(in srgb, var(--aa-fg) 3%, transparent);
+}
+
+.aa-landing .aa-choose__media {
+  min-height: 20rem;
+}
+.aa-landing .aa-choose__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aa-landing .aa-choose__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.aa-landing .aa-choose__list {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.aa-landing .aa-choose__item {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.aa-landing .aa-choose__icon {
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+  color: var(--aa-accent);
+}
+.aa-landing .aa-choose__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.aa-landing .aa-choose__item-title {
+  margin-bottom: 0.35rem;
+}
+.aa-landing .aa-choose__item-desc {
+  color: var(--aa-fg-muted);
+}
+
+.aa-landing .aa-choose__legal {
+  margin-top: 1.75rem;
+  font-size: var(--aa-text-xxs);
+  color: var(--aa-fg-subtle);
+}
+
+.aa-landing .aa-choose__cta {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .aa-landing .aa-choose__card {
+    grid-template-columns: 1fr 1fr;
+  }
+}

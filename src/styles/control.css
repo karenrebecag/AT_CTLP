@@ -1,0 +1,66 @@
+/* atfx-copytrading · "Tú mantienes el control" (Relume Layout 617): header asimétrico
+   (heading izq / descripción der) + fila de 4 items con divisores. Tokens --aa-*. */
+
+.aa-landing .aa-control__header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.aa-landing .aa-control__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--aa-border);
+}
+
+.aa-landing .aa-control__item {
+  padding: 2rem 0 0.5rem;
+  border-top: 1px solid var(--aa-border);
+}
+.aa-landing .aa-control__item:first-child {
+  border-top: 0;
+}
+
+.aa-landing .aa-control__icon {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--aa-accent);
+}
+.aa-landing .aa-control__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.aa-landing .aa-control__title {
+  margin-bottom: 0.75rem;
+}
+.aa-landing .aa-control__desc {
+  color: var(--aa-fg-muted);
+}
+
+.aa-landing .aa-control__cta {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+@media (min-width: 768px) {
+  .aa-landing .aa-control__header {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: end;
+  }
+  .aa-landing .aa-control__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .aa-landing .aa-control__item {
+    padding: 2.5rem 1.5rem 0.5rem;
+    border-top: 0;
+    border-left: 1px solid var(--aa-border);
+  }
+  .aa-landing .aa-control__item:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
