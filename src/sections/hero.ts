@@ -85,7 +85,7 @@ export function renderHero(root: Element, lang: Lang): void {
 
   const desc = document.createElement('p');
   desc.className = 'aa-hero108__desc';
-  desc.setAttribute('data-aa-split', '');
+  desc.setAttribute('data-aa-fade', '');
   desc.textContent = t.desc;
 
   const cta = document.createElement('div');
@@ -98,12 +98,13 @@ export function renderHero(root: Element, lang: Lang): void {
   disclaimer.setAttribute('data-aa-fade', '');
   disclaimer.textContent = t.disclaimer;
 
-  head.append(
-    renderHeading({ size: 'xxl', tag: 'h1', text: t.title, split: true, className: 'aa-hero108__title' }),
-    desc,
-    cta,
-    disclaimer,
-  );
+  // El título NO se parte con SplitText: el masking por líneas hornea el ancho de cada
+  // línea al momento de medir y ya no re-fluye (queda una columna angosta centrada). Como
+  // texto real envuelve natural al ancho del head. Reveal del bloque completo con fade.
+  const title = renderHeading({ size: 'xxl', tag: 'h1', text: t.title, className: 'aa-hero108__title' });
+  title.setAttribute('data-aa-fade', '');
+
+  head.append(title, desc, cta, disclaimer);
 
   const intro = document.createElement('div');
   intro.className = 'aa-hero108__intro';
