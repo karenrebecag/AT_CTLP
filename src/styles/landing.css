@@ -49,6 +49,14 @@
   color: var(--aa-fg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Full-bleed dentro de Elementor: el widget HTML vive en una columna con ancho
+     de contenido acotado (boxed) + padding. Sin esto la landing hereda ese ancho
+     y las strips full-bleed se ven encajonadas. El breakout la expande al viewport
+     sin depender de la config del contenedor. El overflow-x: clip de abajo evita el
+     scroll horizontal que introduciría el ancho del scrollbar en 100vw. */
+  width: 100vw;
+  max-width: 100vw;
+  margin-inline: calc(50% - 50vw);
   /* Contiene cualquier overflow horizontal (p. ej. del form embebido) sin crear
      scroll vertical ni afectar el nav fijo. clip = no establece scroll container. */
   overflow-x: clip;
