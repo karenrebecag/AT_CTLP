@@ -31,7 +31,7 @@ export const ASSETS = {
     `${CDN}/slot1_c26e05ebba6b37f50948931a24b88183f53f80cb9a48dcedbf5f03172da44fe1.webp`,
     `${CDN}/slot2_bfded2a554f41a3f20c3eb4c4001c895a37ca9252d70419df5d436db0a5041a1.webp`,
     `${CDN}/team-of-traders-working-at-monitor-computer-and-br-2026-03-25-09-41-49-utc_3f97b88834b4e75771215f01501d71123b6de183c4ae67b26bb0844288daf2cd.webp`,
-    `${CDN}/workstation-with-graphs-charts-and-stock-market-d-2026-03-24-03-21-26-utc_fbd8be8867c0e17e2332b14ba66b71006b3e43c299c34cbd84b9154ee0f7a05f.webp`,
+    `${CDN}/assda_e7b958424330c7ccc4eeda4834890acaf19670d266cc1f45e3a4033952f6fda2.webp`,
     `${CDN}/slot4_28c0f231e7d36bd758b4400d31726b26e85b10139dbdd6459e7788996cc5ece2.webp`,
     `${CDN}/businessman-trading-and-headset-with-smile-at-off-2026-06-09-16-15-36-utc_c02d0aa32981ce312013e4ec5652738ec45c1d0f4a417c3c66d9edb476c7dbbc.webp`,
     `${CDN}/slot6_496544a3c1cc102b82a1937ad4ef25e62389d7299cddb21a5b480babd64de7a2.webp`,
