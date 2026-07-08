@@ -29,22 +29,40 @@ export function playIntro(scope: Element): void {
   const intro = scope.querySelector<HTMLElement>('[data-aa-intro]');
   if (!intro || prefersReducedMotion()) return;
 
-  const headings = intro.querySelectorAll<HTMLElement>('[data-aa-split]');
   const reveals = intro.querySelectorAll<HTMLElement>('[data-aa-fade]');
 
-  const tl = gsap.timeline({
-    defaults: { duration: ENTER_DURATION, ease: ENTER_EASE, stagger: STAGGER },
+  // Headings: SplitText con autoSplit → re-parte al cargar la fuente display y en cada
+  // resize, midiendo las líneas contra el ancho real ya aplicado. Sin esto las líneas se
+  // hornean con el ancho/fuente del boot (dentro de Elementor, la columna angosta antes de
+  // que aplique el stylesheet) y no vuelven a envolver. onSplit devuelve la animación para
+  // que autoSplit la revierta y recree en cada re-split.
+  intro.querySelectorAll<HTMLElement>('[data-aa-split]').forEach((el) => {
+    SplitText.create(el, {
+      ...SPLIT_CONFIG,
+      autoSplit: true,
+      onSplit: (self) =>
+        gsap.from(self.words, {
+          yPercent: 100,
+          rotate: 10,
+          transformOrigin: 'bottom left',
+          duration: ENTER_DURATION,
+          ease: ENTER_EASE,
+          stagger: STAGGER,
+          delay: 0.1,
+        }),
+    });
   });
-
-  if (headings.length) {
-    const split = new SplitText(headings, SPLIT_CONFIG);
-    gsap.set(split.words, { yPercent: 100, rotate: 10, transformOrigin: 'bottom left' });
-    tl.to(split.words, { yPercent: 0, autoAlpha: 1, rotate: 0, delay: 0.1 }, 0.1);
-  }
   // OSMO sólo mueve y:2em (el fade lo da la cubierta de transición Barba). Aquí no hay
   // cubierta, así que añadimos autoAlpha para que el reveal se vea limpio.
   if (reveals.length) {
-    tl.from(reveals, { y: '2em', autoAlpha: 0 }, '<');
+    gsap.from(reveals, {
+      y: '2em',
+      autoAlpha: 0,
+      duration: ENTER_DURATION,
+      ease: ENTER_EASE,
+      stagger: STAGGER,
+      delay: 0.1,
+    });
   }
 }
 
@@ -55,16 +73,20 @@ export function initScrollReveals(scope: Element): void {
   // Headings: mismo SplitText que el mount, disparado al entrar en viewport.
   scope.querySelectorAll<HTMLElement>('[data-aa-split]').forEach((el) => {
     if (el.closest('[data-aa-intro]')) return;
-    const split = new SplitText(el, SPLIT_CONFIG);
-    gsap.from(split.words, {
-      yPercent: 100,
-      rotate: 10,
-      autoAlpha: 0,
-      transformOrigin: 'bottom left',
-      duration: ENTER_DURATION,
-      ease: ENTER_EASE,
-      stagger: STAGGER,
-      scrollTrigger: { trigger: el, start: 'clamp(top 80%)', once: true },
+    SplitText.create(el, {
+      ...SPLIT_CONFIG,
+      autoSplit: true,
+      onSplit: (self) =>
+        gsap.from(self.words, {
+          yPercent: 100,
+          rotate: 10,
+          autoAlpha: 0,
+          transformOrigin: 'bottom left',
+          duration: ENTER_DURATION,
+          ease: ENTER_EASE,
+          stagger: STAGGER,
+          scrollTrigger: { trigger: el, start: 'clamp(top 80%)', once: true },
+        }),
     });
   });
 
