@@ -30,7 +30,7 @@
 }
 
 .aa-landing .aa-hero108__desc {
-  max-width: 48rem;
+  max-width: var(--aa-measure);
   margin-inline: auto;
   color: var(--aa-fg-muted);
 }
@@ -43,7 +43,7 @@
 
 .aa-landing .aa-hero108__disclaimer {
   margin-top: 1.25rem;
-  max-width: 36rem;
+  max-width: var(--aa-measure);
   margin-inline: auto;
   font-size: var(--aa-text-xxs);
   line-height: 1.5;

@@ -55,7 +55,7 @@
   gap: var(--aa-gap-m);
   /* em (no rem): cuelga del font-size de .aa-landing → independiente del root de WP.
      Con rem, un tema con root 62.5% lo dejaba en ~480px y el heading se apretaba. */
-  max-width: 48em;
+  max-width: var(--aa-measure);
   margin-inline: auto;
 }
 
@@ -158,7 +158,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--aa-gap-m);
-  max-width: 34em;
+  max-width: var(--aa-measure);
 }
 .aa-landing .aa-team__lead { color: var(--aa-fg-muted); }
 

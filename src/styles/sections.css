@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--aa-gap-s);
-  max-width: 48em;
+  max-width: var(--aa-measure);
 }
 .aa-landing .aa-section-header--center {
   align-items: center;
@@ -17,7 +17,7 @@
   align-items: flex-start;
   text-align: left;
 }
-.aa-landing .aa-section-header__sub { max-width: 40em; }
+.aa-landing .aa-section-header__sub { max-width: var(--aa-measure); }
 
 /* ─── 5 · Qué aprenderás (lista numerada con directional-hover) ─────────────────── */
 .aa-landing .aa-learn__inner {
@@ -114,13 +114,13 @@
   align-items: center;
   gap: var(--aa-gap-l);
   width: 100%;
-  max-width: 48em;
+  max-width: var(--aa-measure);
   padding-inline: var(--aa-container-pad);
   text-align: center;
   pointer-events: none; /* no bloquea el scroll del pin */
 }
 .aa-landing .aa-drift__sub {
-  max-width: 32em;
+  max-width: var(--aa-measure);
   color: var(--aa-fg-muted);
 }
 
@@ -159,7 +159,7 @@
 }
 /* Pills (badge + "Preguntas frecuentes") quedan compactos a la izquierda */
 .aa-landing .aa-faq__inner > .aa-pill { align-self: flex-start; }
-.aa-landing .aa-faq__intro { max-width: 52ch; }
+.aa-landing .aa-faq__intro { max-width: var(--aa-measure); }
 .aa-landing .aa-faq .aa-accordion { width: 100%; }
 .aa-landing .aa-faq__cta {
   display: flex;

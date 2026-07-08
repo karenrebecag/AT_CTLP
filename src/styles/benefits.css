@@ -57,7 +57,7 @@
 .aa-landing .aa-why__icon svg { width: 2.5rem; height: 2.5rem; }
 
 .aa-landing .aa-why__title { align-self: center; }
-.aa-landing .aa-why__desc { max-width: 44em; }
+.aa-landing .aa-why__desc { max-width: var(--aa-measure); }
 
 @media screen and (max-width: 767px) {
   /* En móvil el icono va arriba, título y desc debajo (una sola columna) */

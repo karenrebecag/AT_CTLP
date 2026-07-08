@@ -16,7 +16,7 @@
   border-bottom: 1px solid var(--aa-border);
 }
 .aa-landing .aa-footer__cta-sub {
-  max-width: 42em;
+  max-width: var(--aa-measure);
   color: var(--aa-fg-muted);
 }
 

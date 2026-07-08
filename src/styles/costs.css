@@ -2,7 +2,7 @@
    costo (icono + concepto + badge + descripción + nota). Sin precios. Tokens --aa-*. */
 
 .aa-landing .aa-costs__header {
-  max-width: 40rem;
+  max-width: var(--aa-measure);
   margin-inline: auto;
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }

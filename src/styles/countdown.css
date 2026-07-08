@@ -33,7 +33,7 @@
 }
 
 .aa-landing .aa-countdown-section__note {
-  max-width: 32em;
+  max-width: var(--aa-measure);
   font-size: var(--aa-text-s);
   line-height: var(--aa-leading-normal);
   color: var(--aa-fg-muted);
@@ -47,7 +47,7 @@
   align-items: center;
   gap: var(--aa-gap-s);
   width: 100%;
-  max-width: 30em;
+  max-width: var(--aa-measure);
   margin-inline: auto;
 }
 .aa-landing .aa-countdown__unit {

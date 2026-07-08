@@ -71,7 +71,7 @@
 .aa-landing .aa-accordion__inner { overflow: hidden; min-height: 0; }
 .aa-landing .aa-accordion__a {
   padding-bottom: var(--aa-gap-m);
-  max-width: 60ch;
+  max-width: var(--aa-measure);
   color: var(--aa-fg-muted);
   font-size: var(--aa-text-s);
   line-height: 1.5;

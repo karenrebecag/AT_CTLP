@@ -3,7 +3,7 @@
    Tokens --aa-* (border/accent se remapean por tema). */
 
 .aa-landing .aa-steps__header {
-  max-width: 40rem;
+  max-width: var(--aa-measure);
   margin-bottom: clamp(3rem, 6vw, 5rem);
 }
 

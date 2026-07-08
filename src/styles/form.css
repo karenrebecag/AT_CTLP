@@ -5,7 +5,7 @@
   flex-flow: column;
   gap: var(--aa-gap-m);
   width: 100%;
-  max-width: 40em;
+  max-width: var(--aa-measure);
   margin-inline: auto;
 }
 
@@ -185,7 +185,7 @@
   align-items: center;
   text-align: center;
   gap: var(--aa-gap-s);
-  max-width: 44em;
+  max-width: var(--aa-measure);
   margin-inline: auto;
 }
 

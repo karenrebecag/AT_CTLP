@@ -41,7 +41,7 @@
 .aa-landing .aa-agenda__body { min-width: 0; }
 .aa-landing .aa-agenda__title { margin-bottom: var(--aa-gap-xs); }
 .aa-landing .aa-agenda__desc {
-  max-width: 48em;
+  max-width: var(--aa-measure);
   color: var(--aa-fg-muted);
 }
 

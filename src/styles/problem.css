@@ -15,7 +15,7 @@
 }
 
 /* Header 299 centrado, ancho contenido */
-.aa-landing .aa-skills .aa-section-header--center { max-width: 40em; margin-inline: auto; }
+.aa-landing .aa-skills .aa-section-header--center { max-width: var(--aa-measure); margin-inline: auto; }
 
 /* Rejilla: 1 col → 2 col (tablet) → 4 col (desktop), como Layout 303 */
 .aa-landing .aa-skills__grid {

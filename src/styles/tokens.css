@@ -132,8 +132,11 @@
   --aa-weight-extrabold: 800;
 
   /* ─── Container ───────────────────────────────────────────────────────────── */
-  --aa-container-max: 1280px;
+  --aa-container-max: 1400px;
   --aa-container-pad: var(--aa-padding-m);
+  /* Medida única de contenido: todos los bloques de texto la comparten para un ancho
+     uniforme. Cambiar aquí reajusta headers, descripciones e intros de toda la landing. */
+  --aa-measure: 1400px;
 
   /* ─── Layout heights ──────────────────────────────────────────────────────── */
   --aa-nav-height: 4.625em; /* spacer superior del hero (alto de navbar OSMO) */

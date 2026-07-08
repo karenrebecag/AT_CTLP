@@ -28,7 +28,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--aa-gap-s);
-  max-width: 42em;
+  max-width: var(--aa-measure);
   text-align: left;
 }
 .aa-landing .aa-compare__lead { color: var(--aa-fg-muted); }
