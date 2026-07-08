@@ -14,7 +14,9 @@
 }
 
 .aa-landing .aa-hero108__head {
-  max-width: 68rem; /* ancho para que el título envuelva en menos líneas, más horizontal */
+  /* Llena el ancho del container de sección (--aa-container-max, 1280px) en vez de un cap
+     propio más angosto: el título se extiende y envuelve en menos líneas. */
+  max-width: none;
   margin-inline: auto;
   text-align: center;
 }
